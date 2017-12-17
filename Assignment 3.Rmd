@@ -49,37 +49,10 @@ K6$cluster <- as.factor(K6$cluster)
 ```{r}
 ggplot(K6, aes(week, avg, colour = cluster)) + geom_line() + xlab("Week") + ylab("Average Motivation")
 ```
+Part II
 
 ```{r}
-K7 <- dplyr::count(K4, cluster)
-```
+D2 <- dplyr::select (D1, 5:17)
 
-Part II:
-```{r}
-A1 <- cluster_class_data
-```
-
-```{r}
-A2 <- dplyr::select(A1,6:13,)
-```
-
-```{r}
-A3 <- na.omit(A2)
-```
-
-```{r}
-fit <-kmeans(A3,3)
-```
-
-```{r}
-A4 <- data.frame(A3, fit$cluster)
-```
-
-```{r}
-names(A4) <- c("1","2","3","4","5","6","7","8","cluster")
-```
-
-```{r}
-A5 <- tidyr::gather(A4, "week", "QID", 1:5)
 ```
 
